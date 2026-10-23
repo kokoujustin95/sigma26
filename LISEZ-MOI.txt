@@ -1,0 +1,17 @@
+GS SIGMA — Aides aux UE et guide utilisateur
+
+Le déploiement est prévu pour GitHub + Render + PostgreSQL. Aucun déploiement Google Apps Script n’est nécessaire.
+
+Fichiers essentiels
+- index.html : interface, aide intégrée et boutons d’ouverture/téléchargement du guide.
+- Guide_utilisateur_GS_SIGMA.pdf : guide PDF à conserver à la racine du site.
+- server.js : serveur web et API PostgreSQL.
+- render.yaml : configuration Render.
+
+Pour tester l’aide : ouvrez le site, cliquez sur « Aide et guide utilisateur », puis testez « Ouvrir le guide PDF » et « Télécharger le guide PDF ». L’aide peut être fermée avec la croix ou la touche Échap.
+
+Si le PDF ne s’ouvre pas en ligne, vérifiez que son nom est exactement Guide_utilisateur_GS_SIGMA.pdf et qu’il est à la racine du dépôt. Le serveur sert le PDF avec le type application/pdf.
+
+Déploiement : téléversez tous les fichiers du ZIP à la racine du dépôt GitHub, reliez le dépôt à Render en Blueprint, puis attendez le démarrage du service et de PostgreSQL. Testez /api/health.
+
+Sécurité : ne saisissez pas de mots de passe réels tant que l’authentification et les autorisations de l’API ne sont pas sécurisées côté serveur.
